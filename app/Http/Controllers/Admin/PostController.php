@@ -13,8 +13,6 @@ use Image;
 use App\Category;
 use Faker\Provider\File;
 
-use Spatie\Analytics\Period;
-use Analytics;
 
 
 class PostController extends Controller
@@ -28,9 +26,7 @@ class PostController extends Controller
     {
         $posts = Post::orderBy('id','desc')->paginate(10);
         $users = User::all()->where('type','default')->count();
-        $pages = Analytics::fetchMostVisitedPages(Period::days(1));
-
-        return view('admin.posts.index')->withUsers($users)->withPosts($posts)->withPages($pages);
+        return view('admin.posts.index')->withUsers($users)->withPosts($posts);
     }
 
     /**

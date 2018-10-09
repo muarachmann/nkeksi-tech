@@ -234,7 +234,6 @@ return [
         'Socialite' => Illuminate\Socialite\Facades\Socialite::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Input' => Illuminate\Support\Facades\Input::class,
-        'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
 
 
     ],
